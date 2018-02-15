@@ -13,7 +13,7 @@ This is a simple REST API, built using Java Spring
 
 Launch STS and open the code folder.  There will be errors, please follow the following steps to prepare the IDE:
 
-1.  Run `docker-compose up -d es-candidate-test` from the jaws repository to get the elastic container up and running.
+1.  Run `docker-compose up -d es-candidate-test` from the repository to get the elastic container up and running.
 2.  Within STS go to `Help > Eclipse Marketplace` and find and install "Buildship Gradle Integration 2.0"
 3.  Right-click the root in the project explorer and select `Configure > Add Gradle Nature`
 4.  Once complete, right-click the root project again and select `Gradle > Refresh Gradle Project`
