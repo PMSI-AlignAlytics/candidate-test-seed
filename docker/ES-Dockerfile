@@ -1,0 +1,33 @@
+FROM sebp/elk:541
+
+# Original File:
+# https://hub.docker.com/r/sebp/elk/~/dockerfile/
+MAINTAINER jkiernander <jkiernander@align-alytics.com>
+
+# Set environment variables to allow ElasticSearch to listen on ::9300 without
+# having ES validate production environment
+# Cluster name
+ENV cluster.name elasticsearch
+
+# Disable XPACK security
+ENV xpack.security.enabled false
+
+# Java Options to limit MEM usage
+ENV ES_JAVA_OPTS -Xms512m -Xmx512m
+
+# Single node discovery mode
+ENV discovery.type single-node
+
+# Listen on all interfaces for HTTP REST API
+ENV http.host 0.0.0.0
+
+# Listen on all interfaces for Transport API
+ENV transport.host 0.0.0.0
+
+# Install S3 repository plugin
+RUN ${ES_HOME}/bin/elasticsearch-plugin install repository-s3
+
+# Exposes the ports:
+# - 9200  ElasticSearch REST
+# - 9300  ElasticSearch transport
+EXPOSE 9200 9300

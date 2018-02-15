@@ -1,0 +1,34 @@
+version: "2"
+
+services:
+
+  # ########################################################################## #
+  # Database: ElasticSearch                                                    #
+  # ########################################################################## #
+  # - Default user: 'elastic'                                                  #
+  # - Default pass: 'changeme'                                                 #
+  # ########################################################################## #
+  es-candidate-test:
+    build:
+      context: .
+      dockerfile: ./docker/ES-Dockerfile
+    container_name: es-candidate-test
+    hostname: es-candidate-test
+    volumes:
+      # Ensures ElasticSearch data survives even if container is destroyed
+      - ../data:/var/lib/elasticsearch
+    networks:
+      - candidate-test
+    ports:
+      - "9200:9200" # ElasticSearch REST API
+      - "9300:9300" # ElasticSearch Node Transport
+    environment:
+      # Sometimes when rebuilding indices can take a long time
+      - ES_CONNECT_RETRY=120
+
+# Virtual Network Configuration
+# This ensures each container is accessible to the others even without
+# Specifying direct links
+networks:
+  candidate-test:
+    driver: bridge

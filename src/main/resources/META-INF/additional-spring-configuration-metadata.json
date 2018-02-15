@@ -1,0 +1,77 @@
+{"properties": [
+  {
+    "name": "elasticsearch.clustername",
+    "type": "java.lang.String",
+    "description": "The name of the elastic cluster"
+  },
+  {
+    "name": "elasticsearch.nodes",
+    "type": "java.lang.String",
+    "description": "The hosts for the elastic search master nodes in a comma separated list host:port,host:port,etc"
+  },
+  {
+    "name": "elasticsearch.index",
+    "type": "java.lang.String",
+    "description": "The name of the index in which to store all the application data"
+  },
+  {
+    "name": "elasticsearch.client-transport-sniff",
+    "type": "java.lang.Boolean",
+    "description": "Allow transport client sniff when connecting to the ES cluster"
+  },
+  {
+    "name": "elasticsearch.retry-max-attempts",
+    "type": "java.lang.Integer",
+    "description": "Maximum retry attempts at communicating with Elastic Search before failing"
+  },
+  {
+    "name": "elasticsearch.retry-backoff-initial-interval",
+    "type": "java.lang.Integer",
+    "description": "Initial interval to wait before retrying"
+  },
+  {
+    "name": "elasticsearch.retry-backoff-multiplier",
+    "type": "java.lang.Double",
+    "description": "Multiplicator of wait interval for subsequent retrying operations"
+  },
+  {
+    "name": "elasticsearch.max-page-size",
+    "type": "java.lang.Integer",
+    "description": "Maximum size of one page of results for list type endpoints"
+  },
+  {
+    "name": "elasticsearch.scroll-time-to-live",
+    "type": "java.lang.Long",
+    "description": "How long a scroll is left alive on ElasticSearch in milliseconds"
+  },
+  {
+    "name": "elasticsearch.enable-xpack",
+    "type": "java.lang.Boolean",
+    "description": "Enable X-Pack secure client"
+  },
+  {
+    "name": "elasticsearch.xpack-user",
+    "type": "java.lang.String",
+    "description": "The X-Pack user in the format `username:password`"
+  },
+  {
+    "name": "elasticsearch.xpack-enable-ssl",
+    "type": "java.lang.Boolean",
+    "description": "Enable X-Pack connection through SSL"
+  },
+  {
+    "name": "elasticsearch.client-transport-tcp-compress",
+    "type": "java.lang.Boolean",
+    "description": "Compress the TCP packets"
+  },
+  {
+    "name": "elasticsearch.client-transport-nodes-sampler-interval",
+    "type": "java.lang.String",
+    "description": "Nodes sampler interval ie. `5s`"
+  },
+  {
+    "name": "elasticsearch.real-index-version",
+    "type": "java.lang.Long",
+    "description": "The version of the ElasticSearch index. Starts with zero."
+  }
+]}
